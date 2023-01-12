@@ -5,7 +5,6 @@ import com.example.service.EmployeeService;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -38,7 +37,7 @@ public class EmployeeControllerTest {
 	private EmployeeService employeeService;
 
 	@Test
-	@DisplayName("Test get all employees")
+	@DisplayName("Controller Test - Get all employees")
 	public void testGetAllEmployees() throws Exception {
 		Employee employee = new Employee();
 		employee.setId(1);
@@ -60,7 +59,7 @@ public class EmployeeControllerTest {
 	}
 
 	@Test
-    @DisplayName("Test get employee with exception")
+    @DisplayName("Controller Test - Get employee with exception")
     public void testGetEmployeeWithException() throws Exception {
         when(employeeService.getEmployee(1)).thenReturn(null);
 
@@ -70,7 +69,7 @@ public class EmployeeControllerTest {
     }
 
 	@Test
-	@DisplayName("Test get employee")
+	@DisplayName("Controller Test - Get employee")
 	public void testGetEmployee() throws Exception {
 		Employee employee = new Employee();
 		employee.setId(1);
@@ -89,7 +88,7 @@ public class EmployeeControllerTest {
 	}
 
 	@Test
-	@DisplayName("Test create employee")
+	@DisplayName("Controller Test - Create employee")
 	public void testAddEmployee() throws Exception {
 		Employee employee = new Employee();
 		employee.setId(1);
@@ -107,7 +106,7 @@ public class EmployeeControllerTest {
 	}
 
 	@Test
-	@DisplayName("Test update employee with exception")
+	@DisplayName("Controller Test - Update employee with exception")
 	public void testUpdateEmployeeWithException() throws Exception {
 		mockMvc.perform(put("/employees/1")
 				.contentType(MediaType.APPLICATION_JSON)
@@ -118,7 +117,7 @@ public class EmployeeControllerTest {
 	}
 
 	@Test
-	@DisplayName("Test update employee")
+	@DisplayName("Controller Test - Update employee")
 	public void testUpdateEmployee() throws Exception {
 		Employee employee = new Employee();
 		employee.setId(1);
@@ -139,7 +138,7 @@ public class EmployeeControllerTest {
 	}
 
 	@Test
-	@DisplayName("Test delete employee")
+	@DisplayName("Controller Test - Delete employee")
 	public void testDeleteEmployee() throws Exception {
 		doAnswer((Answer<Employee>) invocation -> null).when(employeeService).deleteEmployeeById(1);
 		mockMvc.perform(delete("/employees/1"))

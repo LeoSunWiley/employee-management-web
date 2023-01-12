@@ -1,0 +1,1 @@
+INSERT INTO employee(first_name, last_name, age, email, monthly_salary) VALUES('Grace', 'Hopper', 20, 'ghopper@inthenavy.us', 1000);
