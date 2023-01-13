@@ -21,6 +21,6 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn -B verify checkstyle:checkstyle
-      - use: jwgmeligmeyling/checkstyle-github-action@master
+      - uses: jwgmeligmeyling/checkstyle-github-action@master
         with:
           path: '**/checkstyle-result.xml'
