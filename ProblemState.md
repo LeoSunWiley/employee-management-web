@@ -12,7 +12,10 @@ We need to implement the management system as follows:
 
 Below is the main UI for employee management.
 
+![employee_management](employee_management.png)
 
+You need to Implements EmployeeController and EmployeeDaoImpl to complete backend RESET endpoints.
+Also, for frontend, you need to use jquery ajax to complete ajax requests in employee.js
 
 ## Solution
 
